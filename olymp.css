@@ -1,0 +1,126 @@
+& {
+
+
+
+  .scene *, .scene *:after, .scene *:before {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+
+  .card_wrapper {height:100%;}
+
+  .placesettings {
+    height:100vh !important;
+    min-height:610px;
+    min-width:1024px;
+    width:100vw !important;
+    overflow: auto;
+    margin-bottom: -7px;
+  }
+
+  .scene {
+    font-size:20px;
+    text-align:center;
+    margin: 0 auto;
+    height:560px;
+    width:1024px;
+    margin-top:-255px;
+    margin-left:-512px;
+    position: absolute;
+    top:50%;left:50%;
+    line-height: 1;
+  }
+
+  .scenelocker {
+    position:absolute;
+    z-index:9999;
+    width:100%;height:100%;opacity:0.1;top:0;left:0
+  }
+
+  [data-screen] {
+    position: absolute;
+    top:0;left:0;
+    height:100%;
+    width:100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .olympclickable {
+    cursor:pointer;
+  }
+
+
+
+  /* *** OLYMP UI KIT *** */
+  /* BLUE BUTTON */
+  .olympButton:hover {background-color: #39b6e2;}
+  .olympButton {
+    height:40px;
+    line-height: 40px;
+    font-size: 25px;
+    background-color: rgb(112,192,226);
+    border-radius: 7px;
+    padding:0 20px;
+    color:#fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* HINT WITH BLUE BORDER. Arrow Direction: Up */
+  .olympHint {
+    background-color: #fff;
+    padding:10px 20px;
+    border-radius: 10px;
+    line-height: 1.1;
+    border:2px solid #76abcd;
+  }
+  .olympHint:before {
+  content: "";
+  position: absolute; left: 50%; top: -11px;
+  background-color: #fff;
+  width:20px;
+  height: 20px;
+  border-top:2px solid #76abcd;
+  border-left:2px solid #76abcd;
+  margin-left:-10px;
+  -moz-transform:    rotate(45deg);
+  -o-transform:      rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform:         rotate(45deg);
+}
+
+
+
+.olympdisabled {pointer-events: none;}
+
+
+
+
+
+
+
+
+  @at-root {@include keyframes(crt) {0% {opacity:1;} 50% {opacity:0;} 100% {opacity:0;}}}
+
+  @mixin animation2($name, $delay, $iterations, $timing_function) {
+    -ms-animation: $name $delay $iterations $timing_function;
+    -moz-animation: $name $delay $iterations $timing_function;
+    -webkit-animation: $name $delay $iterations $timing_function;
+    animation: $name $delay $iterations $timing_function;
+  }
+  .olympInput span {display: inline-block;background-color: #333;width:2px;height:28px;margin-bottom:-5px;margin-left:2px;margin-right:2px;opacity: 0;}
+  .olympInput.activeinput span {@include animation2(crt, 1s, infinite, steps(1));}
+
+  .olympInput {
+    border:2px solid #0088cc;
+    border-radius: 7px;
+    height:40px;
+    width:50px;
+    text-align: right;
+    font-size: 26px;
+    line-height: 40px;
+    color:#333;
+    background-color: #fff;
+  }
+
+  .inputWrong {color:#d11;}
+
+
+}
