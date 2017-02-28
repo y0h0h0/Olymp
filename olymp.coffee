@@ -117,7 +117,7 @@ OLYMP.delay = () =>
   duration = args.number[0] || 1000
   cb = args.function[0]
   # scenelocker = $.div('scenelocker').appendTo($('.scene'))
-  OLYMP.lock()
+  OLYMP.lock() 
   $.delay duration, =>
     # scenelocker.remove()
     OLYMP.unlock()
