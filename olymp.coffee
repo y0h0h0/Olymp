@@ -1032,25 +1032,12 @@ OLYMP.action.on = () ->
 
 
 window.onerror = (msg, url, lineNo, columnNo, error) ->
-  # console.warn ' ============= '
-  # console.warn this.name
-  # message = [  'Message: ' + msg,  'URL: ' + url,  'Line: ' + lineNo,  'Column: ' + columnNo,  'Error object: ' + JSON.stringify(error)  ].join(' - ');
-  # console.error message
-  #
-  # console.warn ' ----- ' + msg
-  # console.warn ' ----- ' + url+':'+lineNo
-
   imsg = msg
   if imsg.indexOf(':')>-1 then imsg = imsg.split(':')[1].trim()
   console.error ''
   console.error imsg
   console.error("%cDetails: " + url+':'+lineNo,'color: #1975d1;');
-
   return true
-  # alert(message);
-
-
-
 
 
   #..
